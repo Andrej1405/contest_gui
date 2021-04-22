@@ -14,6 +14,9 @@
 
   <body>
     <div class="wrapper">
+      <h3 style="position: relative; left: 25px; top: 10px; color: #ffffffb8">
+        Скорость сервопривода
+      </h3>
       <div class="slider">
         <output for="fader" id="volume">0</output>
         <input
@@ -25,9 +28,7 @@
           step="1"
           oninput="outputUpdate(value)"
         />
-        <h4>Скорость сервопривода</h4>
       </div>
-      <hr />
       <div class="control">
         <div class="left_control">
           <button id="control1" class="button_control left level-left1">
@@ -219,20 +220,16 @@
       function outputUpdate(vol) {
         var output = document.querySelector("#volume");
         output.value = vol;
-        output.style.left = vol - 1.5 + "%";
-        if (output.value > 3) {
-          output.style.left = vol - 2 + "%";
-        }
 
-        if (output.value > 9) {
+        if (output.value >= 17) {
           output.style.left = vol - 3 + "%";
         }
 
-        if (output.value > 44) {
+        if (output.value > 37) {
           output.style.left = vol - 4 + "%";
         }
 
-        if (output.value > 77) {
+        if (output.value > 73) {
           output.style.left = vol - 5 + "%";
         }
       }
